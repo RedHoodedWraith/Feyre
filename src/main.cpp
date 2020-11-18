@@ -67,9 +67,11 @@ void loop() {
         while (LoRa.available()) {
             buffer += (char)LoRa.read();
         }
+        Serial.print(buffer);
+        Serial.print("'\n");
 
         // Sends received buffer to the Rhys Module
-        Serial3.print(buffer);
+        Serial3.println(buffer);
 
         // print RSSI of packet
         Serial3.print("' with RSSI ");
